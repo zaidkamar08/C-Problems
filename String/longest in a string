@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  string s;
+  getline(cin,s);
+
+  string curr="";
+  string longest="";
+
+  for(int i=0;i<s.length();i++){
+    if(s[i]!=' '){
+      curr+=s[i];
+    }
+    else{
+      if(curr.length()>longest.length()){
+        longest=curr;
+      }
+      curr="";
+    }
+  }
+  if(curr.length()>longest.length()){
+    longest=curr;
+  }
+  cout<<longest;
+  return 0;
+}
